@@ -29,13 +29,14 @@
 						<table border="0" cellpadding="0" cellspacing="20">
 							
 								<%
-									int checkID = Integer.parseInt(request.getAttribute("checkIdFlag").toString());
-									if(checkID == 1) {
-								%>
-									<srcipt language="JavaScript">
-										alert("입력하신 아이디는 이미 사용 중입니다. 다른 아이디를 입력하세요.");
-										history.go(-1);									
-									</srcipt>								
+									int checkId = Integer.parseInt(request.getAttribute("checkIdFlag").toString());
+								
+									if(checkId == 1) {								
+								%>				
+									<script language="JavaScript">
+										alert("입력하신 아이디는 이미 사용중입니다. 다른 아이디를 입력하세요.");
+										history.go(-1);
+									</script>
 								<% 
 									} 
 								%>

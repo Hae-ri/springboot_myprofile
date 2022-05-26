@@ -29,25 +29,25 @@
 						<table border="0" cellpadding="0" cellspacing="20">
 							
 								<%
-									int checkID = Integer.parseInt(request.getAttribute("checkIdFlag").toString());
-									int checkPW = Integer.parseInt(request.getAttribute("checkPwFlag").toString());
+									int checkId = Integer.parseInt(request.getAttribute("checkIdFlag").toString());
+									int checkPw = Integer.parseInt(request.getAttribute("checkPwFlag").toString());
 								
-									if(checkID != 1) {
-								%>
-									<srcipt language="JavaScript">
-										alert("입력하신 아이디는 존재하지 않는 아이디입니다. 아이디를 다시 확인해주세요.");
-										history.go(-1);									
-									</srcipt>								
+									if(checkId == 0) {								
+								%>				
+									<script language="JavaScript">
+										alert("입력하신 아이디는 존재하지 않는 아이디입니다. 아이디를 확인해 주세요.");
+										history.go(-1);
+									</script>
 								<% 
-									}else if(checkPW == 0) {
+									} else if (checkPw == 0) {
 								%>
-									<srcipt language="JavaScript">
-										alert("입력하신 비밀번호가 틀렸습니다. 다시 확인해주세요.");
-										history.go(-1);									
-									</srcipt>	
-								
+									<script language="JavaScript">
+										alert("입력하신 비밀번호가 틀립니다. 다시 확인해 주세요.");
+										history.go(-1);
+									</script>
 								<% 
-									}else {
+									} else {
+										
 										session.setAttribute("ValidMem", "yes");
 									}
 								%>
